@@ -2,111 +2,124 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide Cybersécurité Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Guide Cybersécurité</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Page crédible -->
-    <section id="guide">
-        <div class="container">
-            <h1>🛡️ Guide rapide : Protéger son smartphone</h1>
+<div id="flash"></div>
 
-            <p>
-                Les smartphones contiennent aujourd'hui une grande partie
-                de notre vie numérique. Voici quelques conseils essentiels.
-            </p>
+<!-- Écran 1 -->
+<section id="guide" class="screen active">
 
-            <ul>
-                <li>✅ Utiliser un mot de passe robuste</li>
-                <li>✅ Activer l'authentification à deux facteurs</li>
-                <li>✅ Installer les mises à jour</li>
-                <li>✅ Télécharger uniquement depuis les stores officiels</li>
-                <li>✅ Vérifier les QR Codes avant de les scanner</li>
-            </ul>
+    <div class="card">
 
-            <div class="loading">
-                Chargement du guide complet...
-            </div>
-        </div>
-    </section>
+        <div class="icon">🛡️</div>
 
-    <!-- Faux hack -->
-    <section id="hack" class="hidden">
-
-        <div class="overlay-flash"></div>
-
-        <h1 class="hack-title blink">
-            ⚠ APPAREIL COMPROMIS ⚠
-        </h1>
-
-        <div class="terminal">
-            <p id="status">Initialisation...</p>
-
-            <div class="progress-container">
-                <div id="progress-bar"></div>
-            </div>
-
-            <p id="percentage">0%</p>
-
-            <div id="logs"></div>
-        </div>
-
-        <button id="revealBtn" class="hidden">
-            Que se passe-t-il ?
-        </button>
-
-    </section>
-
-    <!-- Révélation -->
-    <section id="awareness" class="hidden">
-
-        <h1>🛡️ Sensibilisation cybersécurité</h1>
+        <h1>Protéger son smartphone</h1>
 
         <p>
-            Rassurez-vous.
+            Quelques conseils essentiels pour protéger vos données personnelles.
         </p>
+
+        <ul>
+            <li>✅ Faire les mises à jour</li>
+            <li>✅ Utiliser un mot de passe robuste</li>
+            <li>✅ Activer le 2FA</li>
+            <li>✅ Installer uniquement des applications fiables</li>
+            <li>✅ Vérifier les QR Codes</li>
+        </ul>
+
+        <div class="loader">
+            <div class="loader-bar"></div>
+        </div>
+
+        <p class="loading-text">
+            Chargement du guide complet...
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Écran 2 -->
+<section id="hack" class="screen">
+
+    <div class="hack-card">
+
+        <div class="warning-icon">⚠️</div>
+
+        <h1 class="danger blink">
+            APPAREIL COMPROMIS
+        </h1>
+
+        <p id="status">
+            Initialisation...
+        </p>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <div id="percent">
+            0%
+        </div>
+
+        <div id="logs"></div>
+
+        <button id="revealBtn">
+            QUE FAIRE ?
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Écran 3 -->
+<section id="awareness" class="screen">
+
+    <div class="card">
+
+        <div class="icon">🛡️</div>
+
+        <h1>Simulation terminée</h1>
 
         <p>
             Aucune donnée n'a été récupérée.
         </p>
 
         <p>
-            Cette page simulait une attaque afin de montrer à quel point
-            il est facile de manipuler un utilisateur grâce à l'ingénierie sociale.
+            Cette démonstration montre qu'il est facile de faire confiance à un QR Code sans vérifier sa destination.
         </p>
 
         <p>
-            Vous avez scanné un QR Code sans savoir où il menait.
-        </p>
-
-        <p>
-            Dans la réalité, il pourrait rediriger vers :
+            Dans la réalité, un QR Code peut mener vers :
         </p>
 
         <ul>
-            <li>Un faux site bancaire</li>
             <li>Une page de phishing</li>
-            <li>Une application malveillante</li>
-            <li>Une arnaque en ligne</li>
+            <li>Un faux site bancaire</li>
+            <li>Une arnaque</li>
+            <li>Un téléchargement malveillant</li>
         </ul>
 
-        <p class="warning-text">
-            Vérifiez toujours la destination d'un QR Code avant de lui faire confiance.
+        <p class="highlight">
+            Vérifiez toujours où vous allez avant de cliquer ou scanner.
         </p>
 
         <a
-            class="guide-button"
+            class="link-button"
             href="https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques-cyber/qr-code-quelle-securite-et-quelles"
-            target="_blank"
-        >
-            Consulter le guide France Num
+            target="_blank">
+            En savoir plus
         </a>
 
-    </section>
+    </div>
 
-    <script src="script.js"></script>
+</section>
+
+<script src="script.js"></script>
 
 </body>
 </html>
