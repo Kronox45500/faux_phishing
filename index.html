@@ -3,67 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alerte de sécurité</title>
+    <title>Guide Cybersécurité Mobile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="simulation" class="screen">
-        <h1 class="warning blink">
-            ⚠ VOUS AVEZ ÉTÉ HACKÉ ⚠
+    <!-- Page crédible -->
+    <section id="guide">
+        <div class="container">
+            <h1>🛡️ Guide rapide : Protéger son smartphone</h1>
+
+            <p>
+                Les smartphones contiennent aujourd'hui une grande partie
+                de notre vie numérique. Voici quelques conseils essentiels.
+            </p>
+
+            <ul>
+                <li>✅ Utiliser un mot de passe robuste</li>
+                <li>✅ Activer l'authentification à deux facteurs</li>
+                <li>✅ Installer les mises à jour</li>
+                <li>✅ Télécharger uniquement depuis les stores officiels</li>
+                <li>✅ Vérifier les QR Codes avant de les scanner</li>
+            </ul>
+
+            <div class="loading">
+                Chargement du guide complet...
+            </div>
+        </div>
+    </section>
+
+    <!-- Faux hack -->
+    <section id="hack" class="hidden">
+
+        <div class="overlay-flash"></div>
+
+        <h1 class="hack-title blink">
+            ⚠ APPAREIL COMPROMIS ⚠
         </h1>
 
         <div class="terminal">
-            <p id="line1"></p>
-            <p id="line2"></p>
-            <p id="line3"></p>
-            <p id="line4"></p>
-            <p id="line5"></p>
+            <p id="status">Initialisation...</p>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="percentage">0%</p>
+
+            <div id="logs"></div>
         </div>
 
         <button id="revealBtn" class="hidden">
-            Retour
+            Que se passe-t-il ?
         </button>
-    </div>
 
-    <div id="awareness" class="screen hidden">
-        <h1>🛡 Sensibilisation cybersécurité</h1>
+    </section>
+
+    <!-- Révélation -->
+    <section id="awareness" class="hidden">
+
+        <h1>🛡️ Sensibilisation cybersécurité</h1>
 
         <p>
-            Rassurez-vous : aucune donnée n'a été récupérée.
+            Rassurez-vous.
         </p>
 
         <p>
-            Cette page est une simulation d'une attaque afin de montrer à quel point
-            il est facile de compromettre un appareil avec un simple QRcode.
+            Aucune donnée n'a été récupérée.
         </p>
 
         <p>
-            Vous avez scanné un QR Code sans connaître sa destination.
-            Dans la réalité, un QR Code peut rediriger vers :
+            Cette page simulait une attaque afin de montrer à quel point
+            il est facile de manipuler un utilisateur grâce à l'ingénierie sociale.
+        </p>
+
+        <p>
+            Vous avez scanné un QR Code sans savoir où il menait.
+        </p>
+
+        <p>
+            Dans la réalité, il pourrait rediriger vers :
         </p>
 
         <ul>
             <li>Un faux site bancaire</li>
             <li>Une page de phishing</li>
-            <li>Un téléchargement malveillant</li>
+            <li>Une application malveillante</li>
             <li>Une arnaque en ligne</li>
         </ul>
 
-        <p class="important">
-            En cybersécurité, ne faites jamais confiance aveuglément.
-            Vérifiez toujours la source et l'adresse du site. Que ce soit votre famille,
-            vos collègues, vos amis, vos supérieurs, un expert ou le président.
+        <p class="warning-text">
+            Vérifiez toujours la destination d'un QR Code avant de lui faire confiance.
         </p>
 
         <a
-            class="guide-btn"
+            class="guide-button"
             href="https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques-cyber/qr-code-quelle-securite-et-quelles"
             target="_blank"
         >
             Consulter le guide France Num
         </a>
-    </div>
+
+    </section>
 
     <script src="script.js"></script>
 
