@@ -1,139 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test JavaScript Mobile</title>
-
-<style>
-
-body{
-    font-family:Arial,sans-serif;
-    padding:20px;
-    background:#111;
-    color:white;
-}
-
-#status{
-    padding:20px;
-    border-radius:12px;
-    font-weight:bold;
-    margin-bottom:20px;
-    background:#b00020;
-}
-
-#status.loaded{
-    background:#ff9800;
-}
-
-#status.success{
-    background:#2e7d32;
-}
-
-#status.error{
-    background:#c62828;
-}
-
-button{
-    width:100%;
-    min-height:60px;
-    font-size:18px;
-}
-
-</style>
-
-<!-- Si JS ne se charge pas du tout -->
-<noscript>
-<style>
-#status{
-    background:#c62828 !important;
-}
-</style>
-</noscript>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Cybersécurité Mobile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="status">
-    ❌ JavaScript non chargé
-</div>
+    <!-- Page crédible -->
+    <section id="guide">
+        <div class="container">
+            <h1>🛡️ Guide rapide : Protéger son smartphone</h1>
 
-<h1>Test JavaScript</h1>
+            <p>
+                Les smartphones contiennent aujourd'hui une grande partie
+                de notre vie numérique. Voici quelques conseils essentiels.
+            </p>
 
-<p>
-    Si tout fonctionne, le message rouge doit devenir vert
-    après quelques secondes.
-</p>
+            <ul>
+                <li>✅ Utiliser un mot de passe robuste</li>
+                <li>✅ Activer l'authentification à deux facteurs</li>
+                <li>✅ Installer les mises à jour</li>
+                <li>✅ Télécharger uniquement depuis les stores officiels</li>
+                <li>✅ Vérifier les QR Codes avant de les scanner</li>
+            </ul>
 
-<button id="testBtn">
-    Bouton de test
-</button>
+            <div class="loading">
+                Chargement du guide complet...
+            </div>
+        </div>
+    </section>
 
-<script>
+    <!-- Faux hack -->
+    <section id="hack" class="hidden">
 
-try {
+        <div class="overlay-flash"></div>
 
-    const status = document.getElementById("status");
+        <h1 class="hack-title blink">
+            ⚠ APPAREIL COMPROMIS ⚠
+        </h1>
 
-    status.classList.add("loaded");
-    status.innerHTML =
-        "🟠 JavaScript chargé";
+        <div class="terminal">
+            <p id="status">Initialisation...</p>
 
-    console.log("JS chargé");
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
 
-    setTimeout(() => {
+            <p id="percentage">0%</p>
 
-        status.classList.remove("loaded");
-        status.classList.add("success");
+            <div id="logs"></div>
+        </div>
 
-        status.innerHTML =
-            "✅ JavaScript exécuté correctement";
+        <button id="revealBtn" class="hidden">
+            Que se passe-t-il ?
+        </button>
 
-    }, 2000);
+    </section>
 
-    document
-        .getElementById("testBtn")
-        .addEventListener("click", () => {
+    <!-- Révélation -->
+    <section id="awareness" class="hidden">
 
-            alert("Le JavaScript fonctionne sur ce téléphone.");
+        <h1>🛡️ Sensibilisation cybersécurité</h1>
 
-            if(navigator.vibrate){
-                navigator.vibrate(200);
-            }
+        <p>
+            Rassurez-vous.
+        </p>
 
-        });
+        <p>
+            Aucune donnée n'a été récupérée.
+        </p>
 
-}
-catch(error){
+        <p>
+            Cette page simulait une attaque afin de montrer à quel point
+            il est facile de manipuler un utilisateur grâce à l'ingénierie sociale.
+        </p>
 
-    const status =
-        document.getElementById("status");
+        <p>
+            Vous avez scanné un QR Code sans savoir où il menait.
+        </p>
 
-    status.classList.remove("loaded");
+        <p>
+            Dans la réalité, il pourrait rediriger vers :
+        </p>
 
-    status.classList.add("error");
+        <ul>
+            <li>Un faux site bancaire</li>
+            <li>Une page de phishing</li>
+            <li>Une application malveillante</li>
+            <li>Une arnaque en ligne</li>
+        </ul>
 
-    status.innerHTML =
-        "❌ Erreur JavaScript : " + error.message;
+        <p class="warning-text">
+            Vérifiez toujours la destination d'un QR Code avant de lui faire confiance.
+        </p>
 
-    console.error(error);
-}
+        <a
+            class="guide-button"
+            href="https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques-cyber/qr-code-quelle-securite-et-quelles"
+            target="_blank"
+        >
+            Consulter le guide France Num
+        </a>
 
-window.onerror = function(message){
+    </section>
 
-    const status =
-        document.getElementById("status");
-
-    status.classList.remove("loaded");
-
-    status.classList.add("error");
-
-    status.innerHTML =
-        "❌ Plantage JS : " + message;
-
-};
-
-</script>
+    <script src="script.js"></script>
 
 </body>
 </html>
