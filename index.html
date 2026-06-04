@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerte de sécurité</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="simulation" class="screen">
+        <h1 class="warning blink">
+            ⚠ VOUS AVEZ ÉTÉ HACKÉ ⚠
+        </h1>
+
+        <div class="terminal">
+            <p id="line1"></p>
+            <p id="line2"></p>
+            <p id="line3"></p>
+            <p id="line4"></p>
+            <p id="line5"></p>
+        </div>
+
+        <button id="revealBtn" class="hidden">
+            Retour
+        </button>
+    </div>
+
+    <div id="awareness" class="screen hidden">
+        <h1>🛡 Sensibilisation cybersécurité</h1>
+
+        <p>
+            Rassurez-vous : aucune donnée n'a été récupérée.
+        </p>
+
+        <p>
+            Cette page simulait une attaque afin de montrer à quel point
+            il est facile de faire croire qu'un téléphone est compromis.
+        </p>
+
+        <p>
+            Vous avez scanné un QR Code sans connaître sa destination.
+            Dans la réalité, un QR Code peut rediriger vers :
+        </p>
+
+        <ul>
+            <li>Un faux site bancaire</li>
+            <li>Une page de phishing</li>
+            <li>Un téléchargement malveillant</li>
+            <li>Une arnaque en ligne</li>
+        </ul>
+
+        <p class="important">
+            En cybersécurité, ne faites jamais confiance aveuglément.
+            Vérifiez toujours la source et l'adresse du site.
+        </p>
+
+        <a
+            class="guide-btn"
+            href="https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques-cyber/qr-code-quelle-securite-et-quelles"
+            target="_blank"
+        >
+            Consulter le guide France Num
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
