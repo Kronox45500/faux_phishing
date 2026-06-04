@@ -1,125 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Guide Cybersécurité</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test JavaScript Mobile</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    padding:20px;
+    background:#111;
+    color:white;
+}
+
+#status{
+    padding:20px;
+    border-radius:12px;
+    font-weight:bold;
+    margin-bottom:20px;
+    background:#b00020;
+}
+
+#status.loaded{
+    background:#ff9800;
+}
+
+#status.success{
+    background:#2e7d32;
+}
+
+#status.error{
+    background:#c62828;
+}
+
+button{
+    width:100%;
+    min-height:60px;
+    font-size:18px;
+}
+
+</style>
+
+<!-- Si JS ne se charge pas du tout -->
+<noscript>
+<style>
+#status{
+    background:#c62828 !important;
+}
+</style>
+</noscript>
+
 </head>
 <body>
 
-<div id="flash"></div>
+<div id="status">
+    ❌ JavaScript non chargé
+</div>
 
-<!-- Écran 1 -->
-<section id="guide" class="screen active">
+<h1>Test JavaScript</h1>
 
-    <div class="card">
+<p>
+    Si tout fonctionne, le message rouge doit devenir vert
+    après quelques secondes.
+</p>
 
-        <div class="icon">🛡️</div>
+<button id="testBtn">
+    Bouton de test
+</button>
 
-        <h1>Protéger son smartphone</h1>
+<script>
 
-        <p>
-            Quelques conseils essentiels pour protéger vos données personnelles.
-        </p>
+try {
 
-        <ul>
-            <li>✅ Faire les mises à jour</li>
-            <li>✅ Utiliser un mot de passe robuste</li>
-            <li>✅ Activer le 2FA</li>
-            <li>✅ Installer uniquement des applications fiables</li>
-            <li>✅ Vérifier les QR Codes</li>
-        </ul>
+    const status = document.getElementById("status");
 
-        <div class="loader">
-            <div class="loader-bar"></div>
-        </div>
+    status.classList.add("loaded");
+    status.innerHTML =
+        "🟠 JavaScript chargé";
 
-        <p class="loading-text">
-            Chargement du guide complet...
-        </p>
+    console.log("JS chargé");
 
-    </div>
+    setTimeout(() => {
 
-</section>
+        status.classList.remove("loaded");
+        status.classList.add("success");
 
-<!-- Écran 2 -->
-<section id="hack" class="screen">
+        status.innerHTML =
+            "✅ JavaScript exécuté correctement";
 
-    <div class="hack-card">
+    }, 2000);
 
-        <div class="warning-icon">⚠️</div>
+    document
+        .getElementById("testBtn")
+        .addEventListener("click", () => {
 
-        <h1 class="danger blink">
-            APPAREIL COMPROMIS
-        </h1>
+            alert("Le JavaScript fonctionne sur ce téléphone.");
 
-        <p id="status">
-            Initialisation...
-        </p>
+            if(navigator.vibrate){
+                navigator.vibrate(200);
+            }
 
-        <div class="progress">
-            <div id="progressBar"></div>
-        </div>
+        });
 
-        <div id="percent">
-            0%
-        </div>
+}
+catch(error){
 
-        <div id="logs"></div>
+    const status =
+        document.getElementById("status");
 
-        <button id="revealBtn">
-            QUE FAIRE ?
-        </button>
+    status.classList.remove("loaded");
 
-    </div>
+    status.classList.add("error");
 
-</section>
+    status.innerHTML =
+        "❌ Erreur JavaScript : " + error.message;
 
-<!-- Écran 3 -->
-<section id="awareness" class="screen">
+    console.error(error);
+}
 
-    <div class="card">
+window.onerror = function(message){
 
-        <div class="icon">🛡️</div>
+    const status =
+        document.getElementById("status");
 
-        <h1>Simulation terminée</h1>
+    status.classList.remove("loaded");
 
-        <p>
-            Aucune donnée n'a été récupérée.
-        </p>
+    status.classList.add("error");
 
-        <p>
-            Cette démonstration montre qu'il est facile de faire confiance à un QR Code sans vérifier sa destination.
-        </p>
+    status.innerHTML =
+        "❌ Plantage JS : " + message;
 
-        <p>
-            Dans la réalité, un QR Code peut mener vers :
-        </p>
+};
 
-        <ul>
-            <li>Une page de phishing</li>
-            <li>Un faux site bancaire</li>
-            <li>Une arnaque</li>
-            <li>Un téléchargement malveillant</li>
-        </ul>
-
-        <p class="highlight">
-            Vérifiez toujours où vous allez avant de cliquer ou scanner.
-        </p>
-
-        <a
-            class="link-button"
-            href="https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques-cyber/qr-code-quelle-securite-et-quelles"
-            target="_blank">
-            En savoir plus
-        </a>
-
-    </div>
-
-</section>
-
-<script src="script.js"></script>
+</script>
 
 </body>
 </html>
