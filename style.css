@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.screen {
+    min-height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.warning {
+    color: red;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.blink {
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.terminal {
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+button {
+    margin-top: 40px;
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    background: red;
+    color: white;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
+}
+
+#awareness {
+    background: white;
+    color: black;
+}
+
+#awareness h1 {
+    margin-bottom: 20px;
+}
+
+#awareness p,
+#awareness li {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.important {
+    font-weight: bold;
+    color: #c00000;
+}
+
+.guide-btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #0057b8;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
